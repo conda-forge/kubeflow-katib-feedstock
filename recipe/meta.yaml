@@ -26,7 +26,7 @@ requirements:
     - urllib3 >=1.15.1
     - python-kubernetes >=23.6.0
     - grpcio >=1.41.1
-    - protobuf >=3.19.5,<=3.20.3
+    - protobuf <5,>=4.21.12
 
 test:
   imports:
