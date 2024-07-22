@@ -1,5 +1,5 @@
 {% set name = "kubeflow-katib" %}
-{% set version = "0.16.0" %}
+{% set version = "0.17.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/kubeflow-katib-{{ version }}.tar.gz
-  sha256: fd487ecfb4b7afe90fcde954356eb0eb6da8c4ccb817fe10caba9a12d0dedc67
+  sha256: f8c962757d25cb2062936cc90cc969ab2a302effd5b837e7c393495e5edd41a7
 
 build:
   noarch: python
@@ -26,7 +26,7 @@ requirements:
     - urllib3 >=1.15.1
     - python-kubernetes >=23.6.0
     - grpcio >=1.41.1
-    - protobuf >=3.19.5,<=3.20.3
+    - protobuf <5,>=4.21.12
 
 test:
   imports:
