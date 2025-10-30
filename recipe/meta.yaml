@@ -1,18 +1,18 @@
 {% set name = "kubeflow-katib" %}
-{% set version = "0.17.0" %}
+{% set version = "0.19.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/kubeflow-katib-{{ version }}.tar.gz
-  sha256: f8c962757d25cb2062936cc90cc969ab2a302effd5b837e7c393495e5edd41a7
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 1cc75c5a09743e92c86f6c4c1975cb0a2f15475d2948f6a0106532c05579a89c
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
